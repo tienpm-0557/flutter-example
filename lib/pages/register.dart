@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key, required this.title});
+
   final String title;
 
   @override
@@ -82,25 +83,79 @@ class _RegisterPage extends State<RegisterPage> {
                     height: 80.0,
                   ),
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: Size(contentWidth, 50),
-                        textStyle: const TextStyle(fontSize: 20),
-                        backgroundColor: Colors.white,
-                        foregroundColor:
-                            const Color.fromARGB(255, 245, 53, 108),
-                        shape: const StadiumBorder()),
-                    onPressed: () {
-                      signInWithFacebook();
-                    },
-                    child: const Text(
-                      'Sign in with Facebook',
-                      maxLines: 1,
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 245, 53, 108)),
-                    ),
+                      style: ElevatedButton.styleFrom(
+                          fixedSize: Size(contentWidth, 50),
+                          textStyle: const TextStyle(fontSize: 20),
+                          backgroundColor: Colors.white,
+                          foregroundColor:
+                              const Color.fromARGB(255, 245, 53, 108),
+                          shape: const StadiumBorder()),
+                      onPressed: () {
+                        signInWithFacebook();
+                      },
+                      child: Row(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                            child: FaIcon(
+                              FontAwesomeIcons.facebookF,
+                              color: Color.fromRGBO(244, 50, 111, 1),
+                              size: 30,
+                            ),
+                          ),
+                          VerticalDivider(
+                            color: Color.fromRGBO(244, 50, 111, 1),
+                            thickness: 1,
+                            endIndent: 10,
+                            indent: 10,
+                          ),
+                          Text(
+                            'Sign in with Facebook',
+                            maxLines: 1,
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(255, 245, 53, 108)),
+                          ),
+                        ],
+                      )),
+                  const SizedBox(
+                    height: 20.0,
                   ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          fixedSize: Size(contentWidth, 50),
+                          textStyle: const TextStyle(fontSize: 20),
+                          backgroundColor: Colors.white,
+                          foregroundColor:
+                              const Color.fromARGB(255, 245, 53, 108),
+                          shape: const StadiumBorder()),
+                      onPressed: () {
+                        signInWithTwister();
+                      },
+                      child: Row(
+                        children: const [
+                          FaIcon(
+                            FontAwesomeIcons.twitter,
+                            color: Color.fromRGBO(244, 50, 111, 1),
+                            size: 30,
+                          ),
+                          VerticalDivider(
+                            color: Color.fromRGBO(244, 50, 111, 1),
+                            thickness: 1,
+                            endIndent: 10,
+                            indent: 10,
+                          ),
+                          Text(
+                            'Sign in with Twister',
+                            maxLines: 1,
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(255, 245, 53, 108)),
+                          ),
+                        ],
+                      )),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -113,29 +168,8 @@ class _RegisterPage extends State<RegisterPage> {
                             const Color.fromARGB(255, 245, 53, 108),
                         shape: const StadiumBorder()),
                     onPressed: () {
-                      signInWithTwister();
+                      signUp();
                     },
-                    child: const Text(
-                      'Sign in with Twister',
-                      maxLines: 1,
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 245, 53, 108)),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: Size(contentWidth, 50),
-                        textStyle: const TextStyle(fontSize: 20),
-                        backgroundColor: Colors.white,
-                        foregroundColor:
-                            const Color.fromARGB(255, 245, 53, 108),
-                        shape: const StadiumBorder()),
-                    onPressed: () {},
                     child: const Text(
                       'Sign Up',
                       maxLines: 1,
