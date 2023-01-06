@@ -1,0 +1,17 @@
+{
+  "shortIntroduction": "あなたの周りの人を見つけて\n出会い、愛を見つけてください",
+  "SIGNIN": "サインイン",
+  "GETSTARTED": "始めましょう",
+  "register": "登録",
+  "rememberPassword": "パスワードを覚える",
+  "hintEmail":  "正しいメールアドレスを入力してください",
+  "hintPassword": "パスワードを入力してください",
+  "forgotPassword": "パスワードをお忘れですか？",
+  "dontHaveAccount": "アカウントを持っていませんか?",
+  "SIGNUP": "サインアップ",
+  "enterEmail": "メールアドレスを入力して",
+  "enterPassword": "パスワードを入力する",
+  "Popular":"人気",
+  "Logout": "Logout",
+  "noData": "表示するデータがありません"
+}

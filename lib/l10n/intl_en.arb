@@ -1,0 +1,17 @@
+{
+  "shortIntroduction": "Find and Meet people around\nyou to find LOVE",
+  "SIGNIN": "SIGN IN",
+  "GETSTARTED": "GET STARTED",
+  "register": "Register",
+  "rememberPassword": "Remember Password",
+  "hintEmail":  "Please enter a valid email",
+  "hintPassword": "Please enter your password",
+  "forgotPassword": "FORGOT PASSWORD?",
+  "dontHaveAccount": "DON'T HAVE ACCOUNT?",
+  "SIGNUP": "SIGN UP",
+  "enterEmail": "Enter Email",
+  "enterPassword": "Password",
+  "Popular": "Popular",
+  "logout": "Logout",
+  "noData": "No data to display"
+}
