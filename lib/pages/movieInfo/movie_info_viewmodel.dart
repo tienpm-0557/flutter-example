@@ -24,17 +24,10 @@ class MovieInfoPageViewModel extends ChangeNotifier {
     }
   }
 
-  void setMovie(MovieModel mv) {
-    _movie = mv;
-    getMovieInfo();
-  }
-
   MovieInfoPageViewModel({required FetchMoviesUseCase moviesUseCase}) : _movieInfoUseCase = moviesUseCase {}
 
-  void getMovieInfo() async {
-    if (_movie == null) {
-      return;
-    }
+  void getMovieInfo(MovieModel? movie) async {
+    _movie = movie;
     setState(PageState.loadingData, true);
     final result = await _movieInfoUseCase.getMovieDetail(_movie!.id);
     _movieDetail = result;

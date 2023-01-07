@@ -22,16 +22,12 @@ class DemoMovieInfo extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final mv = ref.watch(movieInfoViewModelProvider.select((value) => value.movie));
     final state = ref.watch(movieInfoViewModelProvider.select((value) => value.state));
+
     if (state == PageState.loadingData) {
       EasyLoading.show(status: 'loading...');
     } else {
       EasyLoading.dismiss();
     }
-
-    useEffect(() {
-      ref.read(movieInfoViewModelProvider).setMovie(movie);
-      return () => {};
-    }, []);
 
     void onClickReviews() {
       showDialog(
@@ -60,7 +56,7 @@ class DemoMovieInfo extends HookConsumerWidget {
     }
 
     Future<void> pullToRefresh() async {
-      ref.read(movieInfoViewModelProvider).getMovieInfo();
+      ref.read(movieInfoViewModelProvider).getMovieInfo(movie);
     }
 
     return Scaffold(
@@ -86,40 +82,36 @@ class DemoMovieInfo extends HookConsumerWidget {
                   genre: mv?.genres,
                 );
               case 1:
-                return Expanded(
-                    flex: 1,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        DemoButton(
-                          text: S.of(context).reviews,
-                          icon: Assets.images.icReview.path,
-                          onClick: onClickReviews,
-                          size: Size((MediaQuery.of(context).size.width - 20) / 2, 60),
-                        ),
-                        Container(
-                          width: 1,
-                          height: 60,
-                          color: Colors.black12,
-                        ),
-                        DemoButton(
-                          text: S.of(context).trailers,
-                          icon: Assets.images.icTrailers.path,
-                          onClick: onClickTrailers,
-                          size: Size((MediaQuery.of(context).size.width - 20) / 2, 60),
-                        ),
-                      ],
-                    ));
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    DemoButton(
+                      text: S.of(context).reviews,
+                      icon: Assets.images.icReview.path,
+                      onClick: onClickReviews,
+                      size: Size((MediaQuery.of(context).size.width - 20) / 2, 60),
+                    ),
+                    Container(
+                      width: 1,
+                      height: 60,
+                      color: Colors.black12,
+                    ),
+                    DemoButton(
+                      text: S.of(context).trailers,
+                      icon: Assets.images.icTrailers.path,
+                      onClick: onClickTrailers,
+                      size: Size((MediaQuery.of(context).size.width - 20) / 2, 60),
+                    ),
+                  ],
+                );
               case 2:
-                return Expanded(
-                    flex: 1,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        DemoInfoView(title: S.of(context).genre, info: mv?.genres?.first.name ?? "--"),
-                        DemoInfoView(title: S.of(context).release, info: movie.releaseDate),
-                      ],
-                    ));
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    DemoInfoView(title: S.of(context).genre, info: mv?.genres?.first.name ?? "--"),
+                    DemoInfoView(title: S.of(context).release, info: movie.releaseDate),
+                  ],
+                );
               default:
                 return Flex(direction: Axis.horizontal, children: [
                   Expanded(
@@ -157,10 +149,7 @@ class DemoInfoView extends HookConsumerWidget {
           Text(title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
-            child: Text(
-              info,
-              style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: Colors.black54),
-            ),
+            child: Text(info, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: Colors.black54)),
           )
         ],
       ),
@@ -223,42 +212,36 @@ class HeaderMovieView extends HookConsumerWidget {
           height: 60,
           child: SizedBox(
             height: 50,
-            child: Expanded(
-              flex: 1,
-              child: SizedBox(
-                height: 50,
-                child: Row(children: [
-                  Expanded(
-                    flex: 1,
-                    child: Text(
-                      movie?.title ?? '',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                        CircularPercentIndicator(
-                          radius: 18.0,
-                          lineWidth: 5.0,
-                          progressColor: Colors.black54,
-                          fillColor: Colors.white,
-                          backgroundColor: Colors.black38,
-                          percent: (movie?.voteAverage ?? 0.0) / 10.0,
-                          center: Text('${movie?.voteAverage ?? 0}'),
-                        )
-                      ]),
-                    ),
-                  ),
-                ]),
+            child: Row(children: [
+              Expanded(
+                flex: 1,
+                child: Text(
+                  movie?.title ?? '',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                ),
               ),
-            ),
+              SizedBox(
+                width: 50,
+                height: 50,
+                child: SizedBox(
+                  width: 40,
+                  height: 40,
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    CircularPercentIndicator(
+                      radius: 18.0,
+                      lineWidth: 5.0,
+                      progressColor: Colors.black54,
+                      fillColor: Colors.white,
+                      backgroundColor: Colors.black38,
+                      percent: (movie?.voteAverage ?? 0.0) / 10.0,
+                      center: Text('${movie?.voteAverage ?? 0}'),
+                    )
+                  ]),
+                ),
+              ),
+            ]),
           ),
         ),
       ],

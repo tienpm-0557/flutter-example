@@ -25,7 +25,6 @@ class MoviesRepositoryImpl implements MoviesRepository {
       var response = await Dio().get(
           '${APIConfiguration.rootURL}/3/movie/$movieId?api_key=${APIConfiguration.privateKey}&language=${APIConfiguration.lang}');
       final movieResponse = MovieDetailModel.fromJson(response.data);
-      debugPrint('$movieResponse');
       return movieResponse;
     } catch (e) {
       debugPrint(e.toString());

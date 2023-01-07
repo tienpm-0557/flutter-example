@@ -6,6 +6,7 @@ import 'package:demoflutter/generated/l10n.dart';
 import 'package:demoflutter/widgets/movie_listview.dart';
 import 'package:demoflutter/pages/MovieInfo/movie_info.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:demoflutter/pages/movieInfo/movie_info_viewmodel_provider.dart';
 
 class DemoMoviespage extends HookConsumerWidget {
   final String title;
@@ -25,6 +26,7 @@ class DemoMoviespage extends HookConsumerWidget {
       EasyLoading.dismiss();
     }
     void didSelectedItem(movie) {
+      ref.read(movieInfoViewModelProvider).getMovieInfo(movie);
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => DemoMovieInfo(movie: movie)));
     }
 
