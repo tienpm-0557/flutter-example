@@ -28,7 +28,7 @@ class DemoMoviespage extends HookConsumerWidget {
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => DemoMovieInfo(movie: movie)));
     }
 
-    Future<void> _pullRefresh() async {
+    Future<void> pullToRefresh() async {
       viewModel.refreshMovies();
     }
 
@@ -42,7 +42,7 @@ class DemoMoviespage extends HookConsumerWidget {
         ],
       ),
       body: RefreshIndicator(
-        onRefresh: _pullRefresh,
+        onRefresh: pullToRefresh,
         child: movies.when(
           data: (data) {
               return MoviesList(

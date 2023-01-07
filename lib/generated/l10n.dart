@@ -199,6 +199,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Movie Detail`
+  String get movieDetail {
+    return Intl.message(
+      'Movie Detail',
+      name: 'movieDetail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message(
+      'Reviews',
+      name: 'reviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trailers`
+  String get trailers {
+    return Intl.message(
+      'Trailers',
+      name: 'trailers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Genre`
+  String get genre {
+    return Intl.message(
+      'Genre',
+      name: 'genre',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Release`
+  String get release {
+    return Intl.message(
+      'Release',
+      name: 'release',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

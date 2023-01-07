@@ -31,13 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterEmail": MessageLookupByLibrary.simpleMessage("メールアドレスを入力して"),
         "enterPassword": MessageLookupByLibrary.simpleMessage("パスワードを入力する"),
         "forgotPassword": MessageLookupByLibrary.simpleMessage("パスワードをお忘れですか？"),
+        "genre": MessageLookupByLibrary.simpleMessage("ジャンル"),
         "hintEmail":
             MessageLookupByLibrary.simpleMessage("正しいメールアドレスを入力してください"),
         "hintPassword": MessageLookupByLibrary.simpleMessage("パスワードを入力してください"),
+        "movieDetail": MessageLookupByLibrary.simpleMessage("映画の詳細"),
         "noData": MessageLookupByLibrary.simpleMessage("表示するデータがありません"),
         "register": MessageLookupByLibrary.simpleMessage("登録"),
+        "release": MessageLookupByLibrary.simpleMessage("リリース"),
         "rememberPassword": MessageLookupByLibrary.simpleMessage("パスワードを覚える"),
+        "reviews": MessageLookupByLibrary.simpleMessage("レビュー"),
         "shortIntroduction": MessageLookupByLibrary.simpleMessage(
-            "あなたの周りの人を見つけて\n出会い、愛を見つけてください")
+            "あなたの周りの人を見つけて\n出会い、愛を見つけてください"),
+        "trailers": MessageLookupByLibrary.simpleMessage("予告編")
       };
 }

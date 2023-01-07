@@ -13,5 +13,10 @@
   "enterPassword": "パスワードを入力する",
   "Popular":"人気",
   "Logout": "Logout",
-  "noData": "表示するデータがありません"
+  "noData": "表示するデータがありません",
+  "movieDetail": "映画の詳細",
+  "reviews": "レビュー",
+  "trailers": "予告編",
+  "genre": "ジャンル",
+  "release": "リリース"
 }

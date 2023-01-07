@@ -13,5 +13,10 @@
   "enterPassword": "Password",
   "Popular": "Popular",
   "logout": "Logout",
-  "noData": "No data to display"
+  "noData": "No data to display",
+  "movieDetail": "Movie Detail",
+  "reviews": "Reviews",
+  "trailers": "Trailers",
+  "genre": "Genre",
+  "release": "Release"
 }

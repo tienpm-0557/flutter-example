@@ -32,16 +32,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPassword": MessageLookupByLibrary.simpleMessage("Password"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("FORGOT PASSWORD?"),
+        "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "hintEmail":
             MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
         "hintPassword":
             MessageLookupByLibrary.simpleMessage("Please enter your password"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "movieDetail": MessageLookupByLibrary.simpleMessage("Movie Detail"),
         "noData": MessageLookupByLibrary.simpleMessage("No data to display"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "release": MessageLookupByLibrary.simpleMessage("Release"),
         "rememberPassword":
             MessageLookupByLibrary.simpleMessage("Remember Password"),
+        "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "shortIntroduction": MessageLookupByLibrary.simpleMessage(
-            "Find and Meet people around\nyou to find LOVE")
+            "Find and Meet people around\nyou to find LOVE"),
+        "trailers": MessageLookupByLibrary.simpleMessage("Trailers")
       };
 }

@@ -1,5 +1,5 @@
-import 'package:demoflutter/repository/movies_repository.dart';
-import 'package:demoflutter/models/movie_model.dart';
+import 'package:demoflutter/data/repository/movies_repository.dart';
+import 'package:demoflutter/data/models/movie_model.dart';
 import 'package:flutter/material.dart';
 
 class FetchMoviesUseCase extends ChangeNotifier {
@@ -11,7 +11,7 @@ class FetchMoviesUseCase extends ChangeNotifier {
     return _moviesRepository.fetchMovies(page);
   }
 
-  Future<List<MovieDetailModel>> getMovieDetail() {
-    return _moviesRepository.getMovieDetail('xxx');
+  Future<MovieDetailModel?> getMovieDetail(int movieId) {
+    return _moviesRepository.getMovieDetail(movieId);
   }
 }

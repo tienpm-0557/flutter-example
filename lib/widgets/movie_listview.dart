@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:demoflutter/models/movie_model.dart';
+import 'package:demoflutter/data/models/movie_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:demoflutter/pages/movies/movies_viewmodel_provider.dart';
 import 'package:demoflutter/pages/movies/movies_viewmodel.dart';
@@ -20,7 +20,7 @@ class MoviesList extends HookConsumerWidget {
 
     return ListView.separated(
       padding: const EdgeInsets.all(8),
-      itemCount: movies.length == 0 ? 1 : movies.length,
+      itemCount: movies.isEmpty ? 1 : movies.length,
       itemBuilder: (BuildContext context, int index) {
         if (movies.isEmpty) {
           return EmptyDataView(content: S.of(context).noData);

@@ -16,8 +16,21 @@ class $AssetsImagesGen {
   AssetGenImage get connexion =>
       const AssetGenImage('assets/images/connexion.png');
 
+  /// File path: assets/images/ic_placeholder.png
+  AssetGenImage get icPlaceholder =>
+      const AssetGenImage('assets/images/ic_placeholder.png');
+
+  /// File path: assets/images/ic_review.png
+  AssetGenImage get icReview =>
+      const AssetGenImage('assets/images/ic_review.png');
+
+  /// File path: assets/images/ic_trailers.png
+  AssetGenImage get icTrailers =>
+      const AssetGenImage('assets/images/ic_trailers.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [connexion];
+  List<AssetGenImage> get values =>
+      [connexion, icPlaceholder, icReview, icTrailers];
 }
 
 class Assets {

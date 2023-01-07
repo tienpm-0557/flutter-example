@@ -1,4 +1,4 @@
-import 'package:demoflutter/models/movie_model.dart';
+import 'package:demoflutter/data/models/movie_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:demoflutter/pages/movies/movies_usecase.dart';
@@ -16,6 +16,7 @@ class MoviesPageViewModel extends ChangeNotifier {
   ListState _state = ListState.normal;
 
   ListState get state => _state;
+
   void setListState(ListState newValue, bool needNotifi) {
     _state = newValue;
     if (needNotifi) {

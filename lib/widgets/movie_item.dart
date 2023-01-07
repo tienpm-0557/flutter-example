@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:demoflutter/models/movie_model.dart';
+import 'package:demoflutter/data/models/movie_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:demoflutter/repository/api_configuration.dart';
+import 'package:demoflutter/data/repository/api_configuration.dart';
 
 class MoviesItem extends HookConsumerWidget {
   const MoviesItem({super.key, required this.movie, required this.itemHeight, required this.onSelected});
@@ -13,8 +13,8 @@ class MoviesItem extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
-        onTap: () =>  onSelected(movie),
-        child: Container(
+        onTap: () => onSelected(movie),
+        child: SizedBox(
           height: itemHeight,
           width: double.infinity,
           child: Row(
